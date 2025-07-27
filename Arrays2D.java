@@ -167,25 +167,38 @@ public void matrixSum(int[][] a,int[][]b){
 }
 /* 15)Count the frequency of each element in an array.*/
 public void freqCount(int[][] arr){
-    int
-    for()
+    for(int i=0;i<arr.length;i++){
+        for(int j=0;j<arr[i].length;j++){
+            int count=0;
+            for(int a=0;a<arr.length;a++){
+                for(int b=0;b<arr[a].length;b++){
+                    if(arr[a][b]==arr[i][j]){
+                        count++;
+                    }
+                }
+            }
+            System.out.println("Frequency Count of "+arr[i][j]+" is: "+count);
+        }
+    }
 }
-/* 16)Given an array of integers, count the number of even and odd numbers in it.
-* 14)Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing.
-*/
+/* 14)Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing.*/
+void findSum(int[][] arr){
+    for(int i=0;i<)
+}
     public static void main(String args[]){
-        int arr2D[][] = {{1,2,3},{4,5,6},{7,8,9}};
+        int arr2D[][] = {{1,2,3},{4,5,4},{1,8,3}};
          int arr22D[][] = {{1,2,3},{4,5,6},{7,8,9}};
         Arrays2D obj = new Arrays2D();
-        obj.print2DArr(arr2D);
-        obj.sumOfElements(arr2D);
-        obj.largest(arr2D);
-        obj.sumOfEachRow(arr2D);
-        obj.findPair(12,arr2D);
-        obj.conToSet(arr2D);
-        // obj.rotateLeft(arr2D);
         // obj.print2DArr(arr2D);
-        obj.countOddEven(arr2D);
-        obj.matrixSum(arr2D,arr22D);
+        // obj.sumOfElements(arr2D);
+        // obj.largest(arr2D);
+        // obj.sumOfEachRow(arr2D);
+        // obj.findPair(12,arr2D);
+        // obj.conToSet(arr2D);
+        // // obj.rotateLeft(arr2D);
+        // // obj.print2DArr(arr2D);
+        // obj.countOddEven(arr2D);
+        // obj.matrixSum(arr2D,arr22D);
+        obj.freqCount(arr2D);
     }
 }
