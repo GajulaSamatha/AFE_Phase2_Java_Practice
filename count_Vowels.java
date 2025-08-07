@@ -12,5 +12,7 @@ class count_Vowels{
             }
         }
         System.out.println("Number of characters: "+co);
+        
+        sc.close();
     }
 }

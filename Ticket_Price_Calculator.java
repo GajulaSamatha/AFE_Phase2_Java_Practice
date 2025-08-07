@@ -16,5 +16,6 @@ class Ticket_Price_Calculator{
     else{
         System.out.println(price);
     }
+        sc.close();
     }
 }

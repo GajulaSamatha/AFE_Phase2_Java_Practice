@@ -43,16 +43,16 @@ class Arrays{
         return lowest;
      }
 
-     public static int GetThirdLowestMarks (int[] marksArray){
-        int flowest = marksArray[0],slowest,tlowest; 
+    //  public static int GetThirdLowestMarks (int[] marksArray){
+    //     int flowest = marksArray[0],slowest,tlowest; 
        
-        for( int i=1;i<marksArray.length;i++){
-            if(lowest > marksArray[i]){
-                lowest=marksArray[i];
-            }
-        }
-        return lowest;
-     }
+    //     for( int i=1;i<marksArray.length;i++){
+    //         if(lowest > marksArray[i]){
+    //             lowest=marksArray[i];
+    //         }
+    //     }
+    //     return lowest;
+    //  }
 
 
 

@@ -22,8 +22,6 @@ class ArrayList1{
         al.clear();//returns void clear all the elements
         System.out.println(al);
 
-        void ManageCustomersQueue(){
-            ArrayList<Str
-        }
+        
     }
 }

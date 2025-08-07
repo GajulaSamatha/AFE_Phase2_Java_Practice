@@ -182,16 +182,30 @@ public void freqCount(int[][] arr){
     }
 }
 /* 14)Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing.*/
-void findSum(int[][] arr){
-    for(int i=0;i<)
+void findMissNum(int[][] arr){
+    for(int i=0;i<=arr.length*arr[0].length;i++){
+        boolean isThere=false;
+        for(int j=0;j<arr.length;j++){
+            for(int k=0;k<arr[j].length;k++){
+                if(arr[j][k]==i){
+                    isThere=true;
+                }
+            }
+        }
+        if(isThere==false){
+            System.out.println("Missing number is: "+i);
+            break;
+        }
+    }
+
 }
     public static void main(String args[]){
         int arr2D[][] = {{1,2,3},{4,5,4},{1,8,3}};
-         int arr22D[][] = {{1,2,3},{4,5,6},{7,8,9}};
+         int arr22D[][] = {{1,2,3},{4,5,6},{0,8,9}};
         Arrays2D obj = new Arrays2D();
         // obj.print2DArr(arr2D);
         // obj.sumOfElements(arr2D);
-        // obj.largest(arr2D);
+        obj.largest(arr2D);
         // obj.sumOfEachRow(arr2D);
         // obj.findPair(12,arr2D);
         // obj.conToSet(arr2D);
@@ -199,6 +213,7 @@ void findSum(int[][] arr){
         // // obj.print2DArr(arr2D);
         // obj.countOddEven(arr2D);
         // obj.matrixSum(arr2D,arr22D);
-        obj.freqCount(arr2D);
+        // obj.freqCount(arr2D);
+        obj.findMissNum(arr22D);
     }
 }

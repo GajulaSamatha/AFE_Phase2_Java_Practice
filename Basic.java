@@ -10,8 +10,8 @@ public static void main(String[] args){
     //pro2
 
 
-    String name="Samatha Gajula";
-    String password="sam@AFE";
+    // String name="Samatha Gajula";
+    // String password="sam@AFE";
 
     Scanner sc=new Scanner(System.in);
     // System.out.println("Enter your UserName:");

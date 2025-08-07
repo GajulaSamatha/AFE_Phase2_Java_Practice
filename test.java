@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 class Test{
     public static void main(String[] args) {
         //to fetch domain of the givem email address
@@ -25,6 +26,4 @@ class Test{
             System.out.println();
         }
     }
-}
-   }
 }

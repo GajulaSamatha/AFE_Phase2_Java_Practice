@@ -174,5 +174,6 @@ class Arrays2{
 
         System.out.println("Printing an empty array:");
         obj.printArray(emptyArr);
+        sc.close();
     }
 }

@@ -14,5 +14,6 @@ class check_Palindrome_String{
         else{
             System.out.println("The string is not a Palindrome!!");
         }
+        sc.close();
     }
 }

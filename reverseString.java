@@ -8,5 +8,6 @@ public class reverseString{
         for(int i=len-1;i>=0;i--){
             System.out.print(word.charAt(i));
         }
+        sc.close();
     }
 }

@@ -47,5 +47,7 @@ class right_Half_Pyramid{
             c++;
         }
         System.out.println("No, of digits are: "+c);
+
+        sc.close();
     }
 }
