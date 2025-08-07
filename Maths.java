@@ -70,15 +70,24 @@ class Maths{
      * 7) The CGPA Calculator
       A student has completed three courses
       with the following grades and credits:
-      Course 1: Grade 9.0 (4 credits)
-      Course 2: Grade 8.5 (3 credits)
-      Course 3: Grade 9.5 (3 credits)
+      Course 1: Grade 9.0 (4 credits) == 36  =54+36=90/3=30
+      Course 2: Grade 8.5 (3 credits) = 24+1.5 = 25.5 
+      Course 3: Grade 9.5 (3 credits) = 27+1.5 =28.5
       The CGPA is calculated as the 
       sum of (Grade * Credits) for all courses,
       divided by the total number of credits. 
      */
-    public static void CGPACalc(Scanner sc){
-        
+    public static void GPACalc(Scanner sc){
+        System.out.println("Enter grades of subject1 : ");
+        double c1 = sc.nextDouble();
+        System.out.println("Now enter grades if subject2: ");
+        double c2 =sc.nextDouble();
+        System.out.println("Now enter grades if subject3: ");
+        double c3 =sc.nextDouble();
+
+        double GPA = ((c1*4)+(c2*3)+(c3*3))/3;
+
+        System.out.println("Total GPA : "+GPA);
     }
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
@@ -91,7 +100,10 @@ class Maths{
             //OTPGeneator();
             //volCyn(18.12,23.6);
             //shoppingBill(sc);
-            cmConvertor(sc);
+            //cmConvertor(sc);
+            GPACalc(sc);
+
+        sc.close();
     }
 
 }
