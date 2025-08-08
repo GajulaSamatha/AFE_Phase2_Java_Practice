@@ -89,6 +89,58 @@ class Maths{
 
         System.out.println("Total GPA : "+GPA);
     }
+    /* 8) The Loan EMI Calculator
+      You've taken a loan of ₹2,50,000 at a 10% annual interest rate
+      for a tenure of 2 years. 
+      Formula: EMI = P * r * (1+r)^n/ (1+r)^n -1
+         P = Principal loan amount
+         r = Monthly interest rate (annual rate divided by 12)
+         n = Total number of months*/
+    public static void EMICalc(Scanner sc){
+        System.out.print("Enter the Prinicipal Loan Amount: ");
+        int pAmount = sc.nextInt();
+        System.out.print("Enter your Intereset Rate: ");
+        int annualRate = sc.nextInt();
+        int rate = (annualRate)/(12*100);
+        System.out.print("ENter the tenture in months: ");
+        int tenure = sc.nextInt();
+
+        double EMI = (pAmount * rate * Math.pow(1 + rate, tenure))/ (Math.pow(1 + rate, tenure) - 1);
+
+        System.out.println("The EMI has to pay : "+EMI);
+    }
+    //leftshift
+    public static void leftShift(int num,int NOB){
+        System.out.println(num<<NOB);
+    }
+    //rightshift
+    public static void rightShift(int num,int NOB){
+        System.out.println(num>>NOB);
+    }
+    /*9) The Time Difference between Cities
+      Bangalore is located at longitude 77.59° E,
+      and London is at 0.12° W.
+      The time difference between two locations
+      is approximately 4 minutes per degree of longitude.
+      Write a program to calculate the
+      total time difference in hours and minutes.
+      Hint:
+         The difference in longitude is 77.59 - (-0.12).
+         Calculate the total time difference in minutes.
+         Use integer casting and modulus to convert
+          the total minutes into hours and minutes.
+         Print the result in the format:
+          "The time difference is X hours and Y minutes."*/
+    public static void calTimeDiff(){
+        double bangLong = 77.59;
+        double londLong = 0.12;
+        double diffLong = bangLong - (-londLong);
+        int timediff = (int)(diffLong*4);
+        int hoursDiff = timediff/60;
+        int minDiff = timediff%60;
+        System.out.println("The time differnce is "+hoursDiff+" and "+minDiff+" minutes.");
+        System.out.println("The total time in minutes is: "+timediff);
+    }
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
             // Random random = new Random();
@@ -101,8 +153,11 @@ class Maths{
             //volCyn(18.12,23.6);
             //shoppingBill(sc);
             //cmConvertor(sc);
-            GPACalc(sc);
-
+            //GPACalc(sc);
+            //EMICalc(sc);
+            //leftShift(5,3);
+            //rightShift(100, 2);
+            calTimeDiff();
         sc.close();
     }
 
