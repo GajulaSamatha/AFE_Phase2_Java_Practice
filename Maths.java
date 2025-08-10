@@ -109,14 +109,7 @@ class Maths{
 
         System.out.println("The EMI has to pay : "+EMI);
     }
-    //leftshift
-    public static void leftShift(int num,int NOB){
-        System.out.println(num<<NOB);
-    }
-    //rightshift
-    public static void rightShift(int num,int NOB){
-        System.out.println(num>>NOB);
-    }
+   
     /*9) The Time Difference between Cities
       Bangalore is located at longitude 77.59° E,
       and London is at 0.12° W.
@@ -155,8 +148,6 @@ class Maths{
             //cmConvertor(sc);
             //GPACalc(sc);
             //EMICalc(sc);
-            //leftShift(5,3);
-            //rightShift(100, 2);
             calTimeDiff();
         sc.close();
     }
