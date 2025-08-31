@@ -126,6 +126,37 @@ public class SearchAlgos {
         }
         System.out.println("Floor found at "+floorInd);
     }
+/*
+ * factorial by recursion
+ */
+    public static int factorial(int n){
+        if(n==2){
+            return 2;
+        }
+        return n*factorial(n-1);
+    }
+    /*
+    * array in reverse
+    */
+    public static void arrRev(int[] arr,int s,int e){
+        if(s==e){
+            return;
+        }
+        int temp=arr[s];
+        arr[s] = arr[e];
+        arr[e]=temp;
+        arrRev(arr, s+1, e-1);
+
+    }
+    /*
+     * calculating the power
+     */
+    public static int calPower(int n,int b){
+        if(n==0){
+            return 1;
+        }
+        return b*calPower(n-1,b);
+    }
     public static void main(String args[]){
 
         Scanner sc= new Scanner(System.in);
@@ -134,7 +165,7 @@ public class SearchAlgos {
 
         //LinearSearchAlgo(sc,arr);
 
-        // countFreq(sc, arr);
+        //countFreq(sc, arr);
         // int isFound= binarySearch(sc,arr);
         // if(isFound==-1){
         //     System.out.println("Entered number is not found!!");
@@ -144,7 +175,15 @@ public class SearchAlgos {
         // }
 
         //freqKey(sc);
-        findFloor(sc);
+        //findFloor(sc);
+
+        System.out.println("factorial: "+factorial(5));
+        arrRev(arr,0,arr.length-1);
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+        System.out.println("Power :"+calPower(4,2));
         sc.close();
     }
 }

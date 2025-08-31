@@ -45,6 +45,10 @@ public class Recursion {
         }
         return findLargeRec(arr, ind-1, temp);
     }
+    //recursion function for checking palindrome
+    //public static void isPalindrome(String s,int ind, cha)
+    //recursion function for finding occurence of target
+    // public static void freqTarget()
     public static void main(String[] args) {
         
         Scanner sc=new Scanner(System.in);
