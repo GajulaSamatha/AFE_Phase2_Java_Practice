@@ -83,18 +83,19 @@ class Arrays2{
     }
     //second largest element in the array
     public int secLarg(int[] arr){
-        int firLarge=arr[0],secLarge=arr[1];
+        int firLarge=Integer.MIN_VALUE,secLarge=Integer.MIN_VALUE;
         for(int i=0;i<arr.length;i++){
             if(arr[i]>firLarge){
-                if(firLarge>secLarge){
-                    secLarge=firLarge;
-                }
+                secLarge=firLarge;
                 firLarge=arr[i];
             }
+            else if(arr[i]>secLarge && firLarge>arr[i]){
+                secLarge=arr[i];
+            }
         }
-        /* 
-        *  
-        */
+        if(secLarge<0){
+            return -1;
+        }
         return secLarge;
     }
     //print yes if the array have a pair(2 adjacent elements) which sums to target
@@ -123,57 +124,57 @@ class Arrays2{
     public static void main(String args[]){
         Arrays2 obj = new Arrays2();
 
-        int arr1[] = {1,2,3,4,5};
+        int arr1[] = {4,2,3,4,0};
 
-        int emptyArr[]  = new int[5];
+        // int emptyArr[]  = new int[5];
 
-        Scanner sc=new Scanner(System.in);
+         Scanner sc=new Scanner(System.in);
 
-        obj.printArray(arr1);
+        // obj.printArray(arr1);
 
-        int sum=obj.sumOfElements(arr1);
-        System.out.println("Sum is:"+sum);
+        // int sum=obj.sumOfElements(arr1);
+        // System.out.println("Sum is:"+sum);
 
-        int max=obj.findLargest(arr1);
-        System.out.println("Largest element is:"+max);
+        // int max=obj.findLargest(arr1);
+        // System.out.println("Largest element is:"+max);
 
-        System.out.println("Now enter the target to find index of it: ");
-        int target=sc.nextInt();
-        int index=obj.indexOf(target,arr1);
-        if(index<0){
-            System.out.println(target+" is not found!!");
-        }
-        else
-            System.out.println("Index of "+target+" is: "+index);
+        // System.out.println("Now enter the target to find index of it: ");
+        // int target=sc.nextInt();
+        // int index=obj.indexOf(target,arr1);
+        // if(index<0){
+        //     System.out.println(target+" is not found!!");
+        // }
+        // else
+        //     System.out.println("Index of "+target+" is: "+index);
 
-        System.out.println("Now enter the target to count : ");
-        int element=sc.nextInt();
-        int count = obj.countOf(element,arr1);
-        System.out.println("count of "+element+" is: "+count);
+        // System.out.println("Now enter the target to count : ");
+        // int element=sc.nextInt();
+        // int count = obj.countOf(element,arr1);
+        // System.out.println("count of "+element+" is: "+count);
 
-        double temperatures[] = {29.4,24.5,29.5,23.4,28.9,30.9};
-        int above29 = obj.above(29,temperatures);
-        System.out.println("No. of Temperatures above 29 is: "+above29);
+        // double temperatures[] = {29.4,24.5,29.5,23.4,28.9,30.9};
+        // int above29 = obj.above(29,temperatures);
+        // System.out.println("No. of Temperatures above 29 is: "+above29);
 
-        obj.reverseArray(arr1);
-        //now the array is in reverse order
-        obj.printArray(arr1);
-        if(obj.checkAscOrder(arr1)){
-            System.out.println("True");
-        }
-        else{
-            System.out.println("False");
-        }
+        // obj.reverseArray(arr1);
+        // //now the array is in reverse order
+        // obj.printArray(arr1);
+        // if(obj.checkAscOrder(arr1)){
+        //     System.out.println("True");
+        // }
+        // else{
+        //     System.out.println("False");
+        // }
 
         int secLarge = obj.secLarg(arr1);
         System.out.println(secLarge);
 
-        obj.pairSumTarget(6,arr1);
+        // obj.pairSumTarget(6,arr1);
 
-        obj.findPair(66,arr1);
+        // obj.findPair(66,arr1);
 
-        System.out.println("Printing an empty array:");
-        obj.printArray(emptyArr);
-        sc.close();
+        // System.out.println("Printing an empty array:");
+        // obj.printArray(emptyArr);
+        // sc.close();
     }
 }
