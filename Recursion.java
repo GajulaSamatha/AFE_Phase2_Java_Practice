@@ -49,6 +49,19 @@ public class Recursion {
     //public static void isPalindrome(String s,int ind, cha)
     //recursion function for finding occurence of target
     // public static void freqTarget()
+
+    //find path in square matrix from 00 to nn
+    public static void path(int n, int m,int r, int c,String s){
+        if(r==n-1 && c==m-1){
+            System.out.println(s);
+            return;
+        }
+        if(r>n||c>m){
+            return;
+        }
+        path(n,m,r+1,c,s+"D");
+        path(n,m,r,c+1,s+"R");
+    }
     public static void main(String[] args) {
         
         Scanner sc=new Scanner(System.in);
@@ -59,7 +72,7 @@ public class Recursion {
         int arr[] = {1,2,7,4,5,6};
         //printArrRec(arr,arr.length-1);
         System.out.println(findLargeRec(arr,arr.length-1,arr.length-1));
-        
+        path(3,3,0,0,"");
         sc.close();
     }
 }
