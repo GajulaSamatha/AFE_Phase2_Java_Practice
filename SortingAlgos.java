@@ -21,25 +21,60 @@ public class SortingAlgos {
     }
 
     //selection sort
+    /*
+     * assume an element as minimum and go through the array to check whether what we assumed is true or not.
+     * then at last we came with minimum and swap it with corresponding index element
+     */
     public static void selectionSort(int[] arr){
         for(int i=0;i<arr.length-1;i++){
-            int min=0;
-            for(int j=i;j<arr.length;j++){
-                if(arr[min]<arr[i]){
-                    min=i;
+            int min=i;
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[min]>arr[j]){
+                    min=j;
                 }
             }
-            int t= arr[min];
-            arr[min]=arr[i];
-            arr[i]=t;
+            if(min == i){
+                System.out.println("No Swap!!");
+            }
+            else{
+                int t= arr[min];
+                arr[min]=arr[i];
+                arr[i]=t;
+            }
+        }
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+    /*
+     * insertion sort
+     * so we are supposed to insert the element at its correst place.
+     * so we took an element and check with elements before to it backwards one by one 
+     * where we find the element is greater than its back element we insert there, 
+     * if we found an element that is greater than the current element we just shift it to next index
+     * to do so we also need to keep the current element in a variable
+     */
+    public static void InsertionSort(int[] arr){
+        for(int i=1;i<arr.length;i++){
+            int key=arr[i];int j=i-1;
+            while(j>=0){
+                if(arr[i]<arr[j]){
+                    arr[j+1]=arr[j];j--;
+                }
+                else{
+                    break;
+                }
+            }
+            arr[j+1]=key;
         }
         for(int i=0;i<arr.length;i++){
             System.out.print(arr[i]+" ");
         }
     }
     public static void main(String args[]){
-        int[] a={2,8,3,6,9,5,0};
-        bubbleSort(a);System.out.println();
-        selectionSort(a);
+        int[] a={2,8,3,6,9,5,3};
+        //bubbleSort(a);System.out.println();
+        // selectionSort(a);
+        InsertionSort(a);
     }
 }
