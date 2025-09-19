@@ -20,6 +20,21 @@ public class SortingAlgos {
         }
     }
 
+    //bubblesort for strings
+    public static void bubbleSortString(String a[]){
+        for(int i=0;i<a.length-1;i++){
+            for(int j=1;j<a.length-i;j++){
+                if(a[j-1].charAt(0)>a[j].charAt(0)){
+                    String t=a[j-1];
+                    a[j-1]=a[j];
+                    a[j]=t;
+                }
+            }
+        }
+        for(int i=0;i<a.length;i++){
+            System.out.print(a[i]+" ");
+        }
+    }
     //selection sort
     /*
      * assume an element as minimum and go through the array to check whether what we assumed is true or not.
@@ -46,6 +61,29 @@ public class SortingAlgos {
             System.out.print(arr[i]+" ");
         }
     }
+    //selectionsort for strings
+    public static void selectionSortStrings(String[] arr){
+        for(int i=0;i<arr.length-1;i++){
+            int min=i;
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[min].charAt(0)>arr[j].charAt(0)){
+                    min=j;
+                }
+            }
+            if(min == i){
+                System.out.println("No Swap!!");
+            }
+            else{
+                String t= arr[min];
+                arr[min]=arr[i];
+                arr[i]=t;
+            }
+        }
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+
     /*
      * insertion sort
      * so we are supposed to insert the element at its correst place.
@@ -75,6 +113,9 @@ public class SortingAlgos {
         int[] a={2,8,3,6,9,5,3};
         //bubbleSort(a);System.out.println();
         // selectionSort(a);
-        InsertionSort(a);
+        //InsertionSort(a);
+        String ss[]= {"sam","mass","apple","banana", "nanna","amma"};
+        //bubbleSortString(ss);
+        selectionSortStrings(ss);
     }
 }
