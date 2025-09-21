@@ -4,11 +4,6 @@ This repository is created to maintain and track my practice for **Phase 2 of th
 
 All problems taught during the bootcamp, as well as any additional problems I solve on my own, will be stored in this repository. The goal is to have a structured record of my learning and progress.
 
-## Repository Structure
-
-- `Problems/` – Contains all the practice problems, organized by topic or session.
-- `Notes/` – Optional notes, explanations, or code snippets from the bootcamp.
-
 ## Purpose
 
 - Track and maintain a personal record of Java & DSA practice.
