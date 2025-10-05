@@ -69,9 +69,44 @@ public class slidingWindow {
         }
         return j+1;
     }
+    //print subarrays of size 
+    public static void printSubarrays(int[] arr,int k){
+        int i=0,j=0,sum=0,max=0;
+        while(i<arr.length){
+            if(j<k){
+            System.out.print(arr[i]+" ");sum=sum+arr[i];i++;j++;
+            }
+            if(j==k){
+                System.out.println();
+                j=0;
+                i-=k-1;
+                max=Math.max(max,sum);
+                sum=0;
+            }
+        }
+        System.out.println("Max Sum: "+ max);
+    }
+    //using sliding window
+    public static void maxsum(int[] arr,int k){
+        int sum=0,max=0;
+        //calculates sum of first k elements
+        for(int i=0;i<k;i++){
+            max=max+arr[i];
+        }
+        sum=max;
+        //now we can appliy sliding window easily
+        for(int i=k;i<arr.length;i++){
+            sum=sum+arr[i];
+            sum=sum-arr[i-k];
+            max=Math.max(max,sum);
+        }
+        System.out.println("max sum:"+ max);
+    }
     public static void main(String argd[]){
         int[] arr= { 2,1,5,0,0,12};
         //calConsSum(arr,3);
-        pal("sam1mus");
+        //pal("sam1mus");
+        //printSubarrays(arr,3);
+        maxsum(arr,3);
     }
 }
