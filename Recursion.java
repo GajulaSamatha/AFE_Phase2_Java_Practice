@@ -62,6 +62,24 @@ public class Recursion {
         path(n,m,r+1,c,s+"D");
         path(n,m,r,c+1,s+"R");
     }
+    //recursion
+    public static int fibbonacci(int n) {
+        int n1=0,n2=1,fibb=0;
+        for(int i=0;i<n;i++){
+            fibb=n1+n2;
+            n1=n2;
+            n2=fibb;
+            System.out.print(fibb+" ");
+        }
+        return n2;
+    }
+    //fibbonacci using recursion
+    public static int fibb(int n){
+        if(n<=1){
+            return n;
+        }
+        return fibb(n-1)+fibb(n-2);
+    }
     public static void main(String[] args) {
         
         Scanner sc=new Scanner(System.in);
@@ -72,7 +90,10 @@ public class Recursion {
         int arr[] = {1,2,7,4,5,6};
         //printArrRec(arr,arr.length-1);
         System.out.println(findLargeRec(arr,arr.length-1,arr.length-1));
-        path(3,3,0,0,"");
+        //path(3,3,0,0,"");
+        int f=fibbonacci(8);
+        System.out.println();
+        System.out.println(fibb(4));
         sc.close();
     }
 }
