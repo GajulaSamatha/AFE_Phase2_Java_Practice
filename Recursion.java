@@ -80,20 +80,62 @@ public class Recursion {
         }
         return fibb(n-1)+fibb(n-2);
     }
+    public static void recName(int n){
+        if(n==0){
+            return;
+        }
+        System.out.println("Samatha");
+        recName(n-1);
+    }
+    //here we did backtrack
+    public static void printNRec(int n){
+        if(n==0){
+            return;
+        }
+        printNRec(n-1);
+        System.out.println(n+" ");
+    }
+    //now lets do printing N to 1 by backtrack
+    public static void printNto1ByRec(int n,int i){
+        if(i>n){
+            return;
+        }
+        printNto1ByRec(n,i+1);
+        System.out.print(i+"");
+    }
+    public static void printNRevRec(int n){
+        if(n==0){
+            return ;
+        }
+        System.out.println(n+" ");
+        printNRevRec(n-1);
+    }
+    public static int sumOfN(int n,int sum){
+        if (n<1) {
+            return sum;
+        }
+        return sumOfN(n-1, n+sum);
+    }
     public static void main(String[] args) {
         
-        Scanner sc=new Scanner(System.in);
-        //printNto1Ite(sc);
-        // int fact = factorial(5);
-        // System.out.println("Factorial : "+fact);
+        // Scanner sc=new Scanner(System.in);
+        // //printNto1Ite(sc);
+        // // int fact = factorial(5);
+        // // System.out.println("Factorial : "+fact);
         
-        int arr[] = {1,2,7,4,5,6};
-        //printArrRec(arr,arr.length-1);
-        System.out.println(findLargeRec(arr,arr.length-1,arr.length-1));
-        //path(3,3,0,0,"");
-        int f=fibbonacci(8);
-        System.out.println();
-        System.out.println(fibb(4));
-        sc.close();
+        // int arr[] = {1,2,7,4,5,6};
+        // //printArrRec(arr,arr.length-1);
+        // System.out.println(findLargeRec(arr,arr.length-1,arr.length-1));
+        // //path(3,3,0,0,"");
+        // int f=fibbonacci(8);
+        // System.out.println();
+        // System.out.println(fibb(4));
+        // sc.close();
+
+        recName(5);
+        printNRec(4);
+        printNRevRec(4);
+        printNto1ByRec(5,1);
+        System.out.print(sumOfN(5, 0));
     }
 }
